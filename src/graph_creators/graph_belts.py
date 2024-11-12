@@ -19,8 +19,8 @@ import numpy as np
 
 matplotlib.use('Agg')
 
-from ..helpers.common_func import detect_peaks, parse_log, setup_klipper_import
-from ..helpers.locale_utils import print_with_c_locale, set_locale
+from helpers.common_func import detect_peaks, parse_log, setup_klipper_import
+from helpers.locale_utils import print_with_c_locale, set_locale
 
 ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'  # For paired peaks names
 
@@ -489,8 +489,8 @@ def belts_calibration(lognames, kinematics, klipperdir='~/klipper', max_freq=200
     )
     try:
         filename = lognames[0].split('/')[-1]
-        dt = datetime.strptime(f"{filename.split('_')[1]} {filename.split('_')[2]}", '%Y%m%d %H%M%S')
-        title_line2 = dt.strftime('%x %X')
+        #dt = datetime.strptime(f"{filename.split('_')[1]} {filename.split('_')[2]}", '%Y%m%d %H%M%S')
+        title_line2 = '' #dt.strftime('%x %X')
         if kinematics is not None:
             title_line2 += ' -- ' + kinematics.upper() + ' kinematics'
     except Exception:
